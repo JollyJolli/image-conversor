@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de Imágenes HEIC</title>
+    
+    <!-- Enlace al archivo CSS externo -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Importar la librería heic2any desde CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/heic2any@0.0.4/dist/heic2any.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>🖼️ Conversor HEIC</h1>
+        <p style="color: #666; margin-bottom: 30px;">Convierte tus imágenes HEIC a PNG o JPG fácilmente</p>
+        
+        <!-- Área de carga de archivos -->
+        <div class="upload-area" id="uploadArea">
+            <div class="upload-icon">📁</div>
+            <div class="upload-text">Arrastra tu archivo HEIC aquí o haz clic para seleccionar</div>
+            <input type="file" id="fileInput" class="file-input" accept=".heic,.HEIC">
+        </div>
+
+        <!-- Información del archivo seleccionado -->
+        <div class="file-info" id="fileInfo"></div>
+
+        <!-- Selector de formato de salida -->
+        <div class="format-selector">
+            <label><input type="radio" name="format" value="png" checked> PNG</label>
+            <label><input type="radio" name="format" value="jpeg"> JPG</label>
+        </div>
+
+        <!-- Botón de conversión -->
+        <button class="btn" id="convertBtn" disabled>Convertir Imagen</button>
+
+        <!-- Indicador de carga -->
+        <div class="loading" id="loading">Convirtiendo imagen</div>
+
+        <!-- Mensajes de error y éxito -->
+        <div class="error" id="errorMsg"></div>
+        <div class="success" id="successMsg"></div>
+
+        <!-- Área de resultado -->
+        <div class="result-area" id="resultArea">
+            <img id="previewImage" class="preview-image" alt="Imagen convertida">
+            <br>
+            <button class="btn" id="downloadBtn">Descargar Imagen</button>
+        </div>
+    </div>
+
+    <!-- Enlace al archivo JavaScript externo -->
+    <script src="script.js"></script>
+</body>
+</html>
